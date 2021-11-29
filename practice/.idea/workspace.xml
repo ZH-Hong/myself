@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="117002a8-883a-4e9f-919e-423c0e966582" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9b4aedfa-4496-4349-9af0-57f48608d31d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,19 +17,16 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Apache-maven/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/practice/src/main/java/com/example/practice_pro/config/MyMetaObjectHandler.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/practice/src/test/java/com/example/practice_pro/PracticeProApplicationTests.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/practice/src/main/java/com/example/practice_pro/entity/UserEntity.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/practice/src/main/java/com/example/practice_pro/config/Myconfig.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/practice/src/main/java/com/example/practice_pro/config/MyBatisPlusConfig.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectId" id="21ZSJI0nxvFR5WfRzIKx99G5Vy8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="21RiOEdUb8ABtrfcBkA5LVB2Urd" />
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -47,14 +37,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunManager" selected="JUnit.PracticeProApplicationTests.testSelectAll">
+  <component name="RunManager" selected="JUnit.PracticeProApplicationTests.testPage">
     <configuration name="PracticeProApplicationTests.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="practice_pro" />
       <extension name="coverage">
@@ -71,7 +56,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PracticeProApplicationTests.testOptimisticLocker" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PracticeProApplicationTests.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="practice_pro" />
       <extension name="coverage">
         <pattern>
@@ -81,7 +66,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.practice_pro" />
       <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.PracticeProApplicationTests" />
-      <option name="METHOD_NAME" value="testOptimisticLocker" />
+      <option name="METHOD_NAME" value="testPage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,35 +104,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PracticeProApplicationTests.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="practice_pro" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.practice_pro.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.practice_pro" />
-      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.PracticeProApplicationTests" />
-      <option name="METHOD_NAME" value="testUpdate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="practice_pro" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="practice_pro" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PracticeProApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="practice_pro" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.practice_pro.PracticeProApplication" />
@@ -157,39 +113,26 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PracticeProApplicationTests.testSelectAll" />
-        <item itemvalue="JUnit.PracticeProApplicationTests.testUpdate" />
-        <item itemvalue="JUnit.PracticeProApplicationTests.testOptimisticLocker" />
-        <item itemvalue="JUnit.PracticeProApplicationTests.testInsert" />
+        <item itemvalue="JUnit.PracticeProApplicationTests.testPage" />
         <item itemvalue="JUnit.PracticeProApplicationTests.testRemove" />
+        <item itemvalue="JUnit.PracticeProApplicationTests.testInsert" />
+        <item itemvalue="JUnit.PracticeProApplicationTests.testSelectAll" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="117002a8-883a-4e9f-919e-423c0e966582" name="Changes" comment="" />
-      <created>1638147042877</created>
+      <changelist id="9b4aedfa-4496-4349-9af0-57f48608d31d" name="Changes" comment="" />
+      <created>1637910267223</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1638147042877</updated>
-      <workItem from="1638147044204" duration="19321000" />
+      <updated>1637910267223</updated>
+      <workItem from="1637910270892" duration="5482000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
