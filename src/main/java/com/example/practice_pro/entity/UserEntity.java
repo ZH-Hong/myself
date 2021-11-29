@@ -28,4 +28,7 @@ public class UserEntity {
     @TableField(fill = FieldFill.INSERT, value = "delete_flag")
     @TableLogic(value = "1", delval = "0")
     private Integer deleteFlag;
+
+    @Version
+    private Integer version;
 }
