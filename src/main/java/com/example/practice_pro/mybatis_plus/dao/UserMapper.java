@@ -1,7 +1,7 @@
-package com.example.practice_pro.dao;
+package com.example.practice_pro.mybatis_plus.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.practice_pro.entity.UserEntity;
+import com.example.practice_pro.mybatis_plus.entity.UserEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

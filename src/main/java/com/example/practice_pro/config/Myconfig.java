@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  * @Version 1.0
  */
 @Configuration
-@MapperScan("com.example.practice_pro.dao")
+@MapperScan("com.example.practice_pro.mybatis_plus.service.dao")
 public class Myconfig {
 
     @Bean

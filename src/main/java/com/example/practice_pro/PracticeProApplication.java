@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.practice_pro.dao")
+@MapperScan("com.example.practice_pro.mybatis_plus.service.dao")
 public class PracticeProApplication {
 
 	public static void main(String[] args) {

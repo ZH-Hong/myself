@@ -1,4 +1,4 @@
-package com.example.practice_pro.entity;
+package com.example.practice_pro.mybatis_plus.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;

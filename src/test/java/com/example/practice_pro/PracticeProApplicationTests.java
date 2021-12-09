@@ -1,14 +1,13 @@
 package com.example.practice_pro;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.practice_pro.dao.UserMapper;
-import com.example.practice_pro.entity.UserEntity;
+import com.example.practice_pro.mybatis_plus.dao.UserMapper;
+import com.example.practice_pro.mybatis_plus.entity.UserEntity;
+import com.example.practice_pro.mybatis_plus.service.DateService;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
-import org.omg.CORBA.portable.ValueOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -23,6 +22,9 @@ class PracticeProApplicationTests {
 
 	@Autowired
 	private UserEntity userEntity;
+
+	@Autowired
+	private DateService dateService;
 
 	@Test
 	void contextLoads() {
@@ -69,9 +71,13 @@ class PracticeProApplicationTests {
 		Page<UserEntity> page = new Page<>();
 		page.setCurrent(2);
 		page.setSize(3);
-		userMapper.selectPage(page, userEntityQueryWrapper);
+		Page<UserEntity> userEntityPage = userMapper.selectPage(page, userEntityQueryWrapper);
+		System.out.println(userEntityPage);
 
 	}
 
-
+	@Test
+	public void batchSaveMeth() {
+		dateService.batchSaveMeth();
+	}
 }
