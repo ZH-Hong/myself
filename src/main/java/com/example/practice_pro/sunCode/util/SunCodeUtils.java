@@ -1,7 +1,9 @@
 package com.example.practice_pro.sunCode.util;
 
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import net.sf.json.util.JSONUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -9,9 +11,12 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.*;
 
 /**
  * @ClassName sunCodeUtils
@@ -45,7 +50,6 @@ public class SunCodeUtils {
             String result = EntityUtils.toString(entity, "UTF-8");
             JSONObject jsons = JSONObject.fromObject(result);
             String expires_in = jsons.getString("expires_in");
-
             //缓存
             if (Integer.parseInt(expires_in) == 7200) {
                 //ok
@@ -60,9 +64,9 @@ public class SunCodeUtils {
         return access_token;
     }
 
-    public static void createSunCode() {
+    public void createSunCode(String appid, String secret, HttpServletRequest request, HttpServletResponse response) {
         try {
-            String access_token = GetUrlS(null, null);
+            String access_token = GetUrlS(appid, secret);
             URL url = new URL("https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=" + access_token);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("POST");// 提交模式
@@ -75,10 +79,9 @@ public class SunCodeUtils {
             PrintWriter printWriter = new PrintWriter(httpURLConnection.getOutputStream());
             // 发送请求参数
             JSONObject paramJson = new JSONObject();
-            paramJson.put("scene", "?gid=1234567890");
-            paramJson.put("page", "pages/index/index");
-            paramJson.put("width", 430);
-            paramJson.put("auto_color", true);
+            paramJson.put("scene", "id=3");
+            paramJson.put("page", "page");
+            paramJson.put( "env_version","trial");
             /**
              * line_color生效
              * paramJson.put("auto_color", false);
@@ -93,16 +96,20 @@ public class SunCodeUtils {
             // flush输出流的缓冲
             printWriter.flush();
             //开始获取数据
-            BufferedInputStream bis = new BufferedInputStream(httpURLConnection.getInputStream());
-            OutputStream os = new FileOutputStream(new File("C:/Users/Waitforyou/Desktop/abc.png"));
-            int len;
+            BufferedInputStream inputStream = new BufferedInputStream(httpURLConnection.getInputStream());
+            BufferedOutputStream outputStream = new BufferedOutputStream(response.getOutputStream());
+//            OutputStream os = new FileOutputStream(new File("C:/Users/Desktop/abc.png"));
+            int len = 0;
             byte[] arr = new byte[1024];
-            while ((len = bis.read(arr)) != -1) {
-                os.write(arr, 0, len);
-                os.flush();
+            while ((len = inputStream.read(arr)) != -1) {
+                outputStream.write(arr, 0, len);
+                outputStream.flush();
             }
-            if (os != null) {
-                os.close();
+            if (outputStream != null) {
+                outputStream.close();
+            }
+            if (inputStream != null) {
+                inputStream.close();
             }
         } catch (Exception e) {
             e.printStackTrace();

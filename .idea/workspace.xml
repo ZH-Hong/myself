@@ -4,33 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbc420d6-5c93-4b94-bb7d-7f49eb9060ca" name="Changes" comment="添加乐观锁插件,对应实体添加相应字段，未进行方法测试；">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_55.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_55.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_55.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="dbc420d6-5c93-4b94-bb7d-7f49eb9060ca" name="Changes" comment="1. 包整理；&#10;2. 批量添加数据；&#10;3. 添加微信太阳码生成Util">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_05.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_4_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_4_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/myself.eml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/myself.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myself.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/PracticeProApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/PracticeProApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/config/Myconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/config/Myconfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/mybatis_plus/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/mybatis_plus/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/practice_pro/PracticeProApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/practice_pro/PracticeProApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sunCode/util/SunCodeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sunCode/util/SunCodeUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,15 +50,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/practice_pro" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sunCode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -81,7 +74,7 @@
       <recent name="C:\01_tools\Idea-workspace\myself" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PracticeProApplicationTests.testPage">
+  <component name="RunManager" selected="Spring Boot.PracticeProApplication">
     <configuration name="PracticeProApplicationTests.batchSaveMeth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myself" />
       <extension name="coverage">
@@ -197,7 +190,18 @@
       <workItem from="1638838616792" duration="248000" />
       <workItem from="1638945582658" duration="4086000" />
       <workItem from="1638949917078" duration="4218000" />
-      <workItem from="1639011065671" duration="441000" />
+      <workItem from="1639011065671" duration="957000" />
+      <workItem from="1639012085946" duration="894000" />
+      <workItem from="1639013037968" duration="1987000" />
+      <workItem from="1639015089039" duration="1640000" />
+      <workItem from="1639020789599" duration="12959000" />
+      <workItem from="1639100871519" duration="1704000" />
+      <workItem from="1639108086984" duration="5633000" />
+      <workItem from="1639144066463" duration="9661000" />
+      <workItem from="1639358183627" duration="114000" />
+      <workItem from="1639729324988" duration="607000" />
+      <workItem from="1639965709424" duration="2967000" />
+      <workItem from="1640228338377" duration="386000" />
     </task>
     <task id="LOCAL-00001" summary="创建Mybatis Plus 项目&#10;1. 创建User相关entity、mapper、分页插件；&#10;2. 创建测试文件：查询所有、添加、逻辑删除、分页方法；">
       <created>1638110156970</created>
@@ -220,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638154321312</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. 包整理；&#10;2. 批量添加数据；&#10;3. 添加微信太阳码生成Util">
+      <created>1639011643458</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639011643458</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +264,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="创建Mybatis Plus 项目&#10;1. 创建User相关entity、mapper、分页插件；&#10;2. 创建测试文件：查询所有、添加、逻辑删除、分页方法；" />
     <MESSAGE value="添加乐观锁插件,对应实体添加相应字段，未进行方法测试；" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加乐观锁插件,对应实体添加相应字段，未进行方法测试；" />
+    <MESSAGE value="1. 包整理；&#10;2. 批量添加数据；&#10;3. 添加微信太阳码生成Util" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 包整理；&#10;2. 批量添加数据；&#10;3. 添加微信太阳码生成Util" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -268,5 +280,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
