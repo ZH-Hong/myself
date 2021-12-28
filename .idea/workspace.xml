@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbc420d6-5c93-4b94-bb7d-7f49eb9060ca" name="Changes" comment="1. 包整理；&#10;2. 批量添加数据；&#10;3. 添加微信太阳码生成Util">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_05.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/myself.eml" afterDir="false" />
+    <list default="true" id="dbc420d6-5c93-4b94-bb7d-7f49eb9060ca" name="Changes" comment="1. 太阳码实现">
+      <change beforePath="$PROJECT_DIR$/.idea/myself.eml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myself.eml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/myself.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myself.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/PracticeProApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/PracticeProApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sunCode/util/SunCodeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sunCode/util/SunCodeUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +53,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -74,82 +64,79 @@
       <recent name="C:\01_tools\Idea-workspace\myself" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.PracticeProApplication">
-    <configuration name="PracticeProApplicationTests.batchSaveMeth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.JedisTest.setTest">
+    <configuration name="JedisDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.jedis.JedisDemo" />
       <module name="myself" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.practice_pro.*" />
+          <option name="PATTERN" value="com.example.practice_pro.jedis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.practice_pro" />
-      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.PracticeProApplicationTests" />
-      <option name="METHOD_NAME" value="batchSaveMeth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JedisTest.connectTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myself" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.practice_pro.jedis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.practice_pro.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.jedis.JedisTest" />
+      <option name="METHOD_NAME" value="connectTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PracticeProApplicationTests.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JedisTest.listTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myself" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.practice_pro.*" />
+          <option name="PATTERN" value="com.example.practice_pro.jedis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.practice_pro" />
-      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.PracticeProApplicationTests" />
-      <option name="METHOD_NAME" value="testInsert" />
+      <option name="PACKAGE_NAME" value="com.example.practice_pro.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.jedis.JedisTest" />
+      <option name="METHOD_NAME" value="listTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PracticeProApplicationTests.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JedisTest.setTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myself" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.practice_pro.*" />
+          <option name="PATTERN" value="com.example.practice_pro.jedis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.practice_pro" />
-      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.PracticeProApplicationTests" />
-      <option name="METHOD_NAME" value="testPage" />
+      <option name="PACKAGE_NAME" value="com.example.practice_pro.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.jedis.JedisTest" />
+      <option name="METHOD_NAME" value="setTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PracticeProApplicationTests.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JedisTest.stringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myself" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.practice_pro.*" />
+          <option name="PATTERN" value="com.example.practice_pro.jedis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.practice_pro" />
-      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.PracticeProApplicationTests" />
-      <option name="METHOD_NAME" value="testSelectAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PracticeProApplicationTests.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myself" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.practice_pro.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.practice_pro" />
-      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.PracticeProApplicationTests" />
-      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="PACKAGE_NAME" value="com.example.practice_pro.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.jedis.JedisTest" />
+      <option name="METHOD_NAME" value="stringTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PracticeProApplicationTests.testPage" />
-        <item itemvalue="JUnit.PracticeProApplicationTests.batchSaveMeth" />
-        <item itemvalue="JUnit.PracticeProApplicationTests.testSelectAll" />
-        <item itemvalue="JUnit.PracticeProApplicationTests.testInsert" />
-        <item itemvalue="JUnit.PracticeProApplicationTests.testUpdate" />
+        <item itemvalue="JUnit.JedisTest.setTest" />
+        <item itemvalue="JUnit.JedisTest.listTest" />
+        <item itemvalue="JUnit.JedisTest.stringTest" />
+        <item itemvalue="JUnit.JedisTest.connectTest" />
+        <item itemvalue="Application.JedisDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +188,11 @@
       <workItem from="1639358183627" duration="114000" />
       <workItem from="1639729324988" duration="607000" />
       <workItem from="1639965709424" duration="2967000" />
-      <workItem from="1640228338377" duration="386000" />
+      <workItem from="1640228338377" duration="2750000" />
+      <workItem from="1640252121977" duration="788000" />
+      <workItem from="1640307248710" duration="3536000" />
+      <workItem from="1640531641795" duration="215000" />
+      <workItem from="1640596712225" duration="2110000" />
     </task>
     <task id="LOCAL-00001" summary="创建Mybatis Plus 项目&#10;1. 创建User相关entity、mapper、分页插件；&#10;2. 创建测试文件：查询所有、添加、逻辑删除、分页方法；">
       <created>1638110156970</created>
@@ -231,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639011643458</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1. 太阳码实现">
+      <created>1640228857203</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640228857203</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +246,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/practice_pro" />
+                        <option value="practice_pro" />
                       </list>
                     </value>
                   </entry>
@@ -265,7 +263,8 @@
     <MESSAGE value="创建Mybatis Plus 项目&#10;1. 创建User相关entity、mapper、分页插件；&#10;2. 创建测试文件：查询所有、添加、逻辑删除、分页方法；" />
     <MESSAGE value="添加乐观锁插件,对应实体添加相应字段，未进行方法测试；" />
     <MESSAGE value="1. 包整理；&#10;2. 批量添加数据；&#10;3. 添加微信太阳码生成Util" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 包整理；&#10;2. 批量添加数据；&#10;3. 添加微信太阳码生成Util" />
+    <MESSAGE value="1. 太阳码实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 太阳码实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
