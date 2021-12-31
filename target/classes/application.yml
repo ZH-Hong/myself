@@ -4,6 +4,29 @@ spring:
     username: root
     password: root
     url: jdbc:mysql://localhost:3306/powerup?useUnicode=true&characterEncoding=utf8
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 1s
+    database: 2
+    jedis:
+      pool:
+        max-active: 8 #最大连接数
+        max-idle: 8   #最大闲置时间
+        max-wait: -1ms  #最大等待时间
+        min-idle: 0    #最小闲置时间
+properties:
+  code:
+    num: 6
+    code-key-suffix: code_
+    phone-key-suffix: phone_
+  secKill:
+    user-record-key: recordGoods
+    product-repository-key: productRepository
+    order-number-key: orderNumber
+    user-key-prefix: userKey：
+    pro-key-prefix: proKey：
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

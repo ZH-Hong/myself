@@ -58,7 +58,22 @@
 		<level name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.6.0" value="project"/>
 		<level name="Maven: com.zaxxer:HikariCP:4.0.3" value="project"/>
 		<level name="Maven: org.springframework:spring-jdbc:5.3.13" value="project"/>
-		<level name="Maven: org.springframework:spring-tx:5.3.13" value="project"/>
+		<level name="Maven: org.springframework.boot:spring-boot-starter-web:2.6.0" value="project"/>
+		<level name="Maven: org.springframework.boot:spring-boot-starter-json:2.6.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.0" value="project"/>
+		<level name="Maven: org.springframework.boot:spring-boot-starter-tomcat:2.6.0" value="project"/>
+		<level name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.55" value="project"/>
+		<level name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.55" value="project"/>
+		<level name="Maven: org.springframework:spring-web:5.3.13" value="project"/>
+		<level name="Maven: org.springframework:spring-beans:5.3.13" value="project"/>
+		<level name="Maven: org.springframework:spring-webmvc:5.3.13" value="project"/>
+		<level name="Maven: org.springframework:spring-aop:5.3.13" value="project"/>
+		<level name="Maven: org.springframework:spring-expression:5.3.13" value="project"/>
 		<level name="Maven: mysql:mysql-connector-java:8.0.27" value="project"/>
 		<level name="Maven: org.projectlombok:lombok:1.18.22" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-starter-test:2.6.0" value="project"/>
@@ -88,23 +103,6 @@
 		<level name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" value="project"/>
 		<level name="Maven: org.springframework:spring-test:5.3.13" value="project"/>
 		<level name="Maven: org.xmlunit:xmlunit-core:2.8.3" value="project"/>
-		<level name="Maven: org.springframework.boot:spring-boot-starter-web:2.6.0" value="project"/>
-		<level name="Maven: org.springframework.boot:spring-boot-starter-json:2.6.0" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.0" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.0" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.0" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.0" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.0" value="project"/>
-		<level name="Maven: org.springframework.boot:spring-boot-starter-tomcat:2.6.0" value="project"/>
-		<level name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.55" value="project"/>
-		<level name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.55" value="project"/>
-		<level name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.55" value="project"/>
-		<level name="Maven: org.springframework:spring-web:5.3.13" value="project"/>
-		<level name="Maven: org.springframework:spring-beans:5.3.13" value="project"/>
-		<level name="Maven: org.springframework:spring-webmvc:5.3.13" value="project"/>
-		<level name="Maven: org.springframework:spring-aop:5.3.13" value="project"/>
-		<level name="Maven: org.springframework:spring-expression:5.3.13" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.6.0" value="project"/>
 		<level name="Maven: org.apache.httpcomponents:httpclient:4.5.9" value="project"/>
 		<level name="Maven: org.apache.httpcomponents:httpcore:4.4.14" value="project"/>
@@ -126,6 +124,28 @@
 		<level name="Maven: com.github.virtuald:curvesapi:1.05" value="project"/>
 		<level name="Maven: redis.clients:jedis:3.2.0" value="project"/>
 		<level name="Maven: org.slf4j:slf4j-api:1.7.32" value="project"/>
+		<level name="Maven: org.springframework.boot:spring-boot-starter-data-redis:2.6.0" value="project"/>
+		<level name="Maven: org.springframework.data:spring-data-redis:2.6.0" value="project"/>
+		<level name="Maven: org.springframework.data:spring-data-keyvalue:2.6.0" value="project"/>
+		<level name="Maven: org.springframework.data:spring-data-commons:2.6.0" value="project"/>
+		<level name="Maven: org.springframework:spring-tx:5.3.13" value="project"/>
+		<level name="Maven: org.springframework:spring-oxm:5.3.13" value="project"/>
+		<level name="Maven: org.springframework:spring-context-support:5.3.13" value="project"/>
+		<level name="Maven: io.lettuce:lettuce-core:6.1.5.RELEASE" value="project"/>
+		<level name="Maven: io.netty:netty-common:4.1.70.Final" value="project"/>
+		<level name="Maven: io.netty:netty-handler:4.1.70.Final" value="project"/>
+		<level name="Maven: io.netty:netty-resolver:4.1.70.Final" value="project"/>
+		<level name="Maven: io.netty:netty-buffer:4.1.70.Final" value="project"/>
+		<level name="Maven: io.netty:netty-codec:4.1.70.Final" value="project"/>
+		<level name="Maven: io.netty:netty-transport:4.1.70.Final" value="project"/>
+		<level name="Maven: io.projectreactor:reactor-core:3.4.12" value="project"/>
+		<level name="Maven: org.reactivestreams:reactive-streams:1.0.3" value="project"/>
 		<level name="Maven: org.apache.commons:commons-pool2:2.11.1" value="project"/>
+		<level name="Maven: org.springframework.boot:spring-boot-starter-validation:2.6.0" value="project"/>
+		<level name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.55" value="project"/>
+		<level name="Maven: org.hibernate.validator:hibernate-validator:6.2.0.Final" value="project"/>
+		<level name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" value="project"/>
+		<level name="Maven: org.jboss.logging:jboss-logging:3.4.2.Final" value="project"/>
+		<level name="Maven: com.fasterxml:classmate:1.5.1" value="project"/>
 	</levels>
 </component>
