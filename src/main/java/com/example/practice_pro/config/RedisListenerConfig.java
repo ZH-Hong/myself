@@ -35,6 +35,8 @@ public class RedisListenerConfig {
         template.setValueSerializer(redisSerializer);
         template.setHashValueSerializer(redisSerializer);
         template.setHashKeySerializer(redisSerializer);
+        //开启事物支持
+        template.setEnableDefaultSerializer(true);
         return template;
     }
 }

@@ -6,11 +6,15 @@ import com.example.practice_pro.sbJedis.service.SecKillService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.core.RedisOperations;
+import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -64,6 +68,35 @@ public class SecKillServiceImpl implements SecKillService {
         if(Integer.parseInt(stringRedisTemplate.opsForValue().get(productRepositoryKey)) < 1){
             throw new MyBusinessException("仓库商品剩余量不足,请等待商家补货！");
         }
+
+        /*开启事物处理*/
+        //开启事物支持(内部类方法)
+        SessionCallback<List<Object>> objectSessionCallback = new SessionCallback<List<Object>>() {
+            @Override
+            public List<Object> execute(RedisOperations operations) throws DataAccessException {
+                //开启监视
+                operations.watch(productRepositoryKey);
+                operations.multi();
+                //进行商品购买操作
+                operations.opsForValue().decrement(productRepositoryKey);
+                //生成订单号
+                String orderNumber = createOrderNumber(userId);
+                //将用户信息和订单号存入set
+                operations.opsForSet().add(userRecordKey, userId.toString());
+                operations.opsForSet().add(orderNumberKey, userId + "," +orderNumber);
+                secKillUserDTO.setUserId(userId);
+                secKillUserDTO.setProId(orderNumber);
+                return operations.exec();
+            }
+        };
+        List<Object> executeResult = stringRedisTemplate.execute(objectSessionCallback);
+        if(executeResult == null || executeResult.size() == 0){
+            throw new MyBusinessException("购买失败，请重试！");
+        }
+        /*开启事物-配置方法
+        //开启监视
+        stringRedisTemplate.watch(productRepositoryKey);
+        stringRedisTemplate.multi();
         //进行商品购买操作
         stringRedisTemplate.opsForValue().decrement(productRepositoryKey);
         //生成订单号
@@ -73,6 +106,21 @@ public class SecKillServiceImpl implements SecKillService {
         stringRedisTemplate.opsForSet().add(orderNumberKey, userId + "," +orderNumber);
         secKillUserDTO.setUserId(userId);
         secKillUserDTO.setProId(orderNumber);
+        List<Object> executeResult = stringRedisTemplate.exec();
+        if(executeResult == null || executeResult.size() == 0){
+            throw new MyBusinessException("购买失败，请重试！");
+        }*/
+
+        /*未开启事物处理
+        //进行商品购买操作
+        stringRedisTemplate.opsForValue().decrement(productRepositoryKey);
+        //生成订单号
+        String orderNumber = createOrderNumber(userId);
+        //将用户信息和订单号存入set
+        stringRedisTemplate.opsForSet().add(userRecordKey, userId.toString());
+        stringRedisTemplate.opsForSet().add(orderNumberKey, userId + "," +orderNumber);
+        secKillUserDTO.setUserId(userId);
+        secKillUserDTO.setProId(orderNumber);*/
         return secKillUserDTO;
     }
 

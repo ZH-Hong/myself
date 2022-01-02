@@ -18,7 +18,7 @@ class SecKillServiceTest {
     @Test
     void secKill() {
 
-        SecKillUserDTO secKillUserDTO = secKillService.secKill(1114l);
+        SecKillUserDTO secKillUserDTO = secKillService.secKill(1115l);
         System.out.println(secKillUserDTO);
     }
 }
