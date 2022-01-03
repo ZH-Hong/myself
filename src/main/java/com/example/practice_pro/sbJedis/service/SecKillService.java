@@ -1,5 +1,6 @@
 package com.example.practice_pro.sbJedis.service;
 
+import com.example.practice_pro.sbJedis.dto.ProductDTO;
 import com.example.practice_pro.sbJedis.dto.SecKillUserDTO;
 
 /**
@@ -22,4 +23,16 @@ public interface SecKillService {
     *@Return
     **/
     SecKillUserDTO secKill(Long userId);
+
+    /**
+     * 设置仓库商品
+     *@author hongguo.zhu
+     *@Description 设置仓库商品
+     *@Date 14:54 2021/12/30
+     *@Param
+     * @param productDTO 商品DTO
+     *@Return
+     * @return java.lang.String
+     **/
+    String createProduct(ProductDTO productDTO);
 }

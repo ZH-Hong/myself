@@ -1,6 +1,7 @@
 package com.example.practice_pro.sbJedis.service;
 
 import com.example.practice_pro.sbJedis.dto.CodeDTO;
+import com.example.practice_pro.sbJedis.dto.ProductDTO;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,5 @@ class SbJedisServiceTest {
         codeDTO.setCode("056179");
         codeDTO.setPhone(111111111111l);
         System.out.println(sbJedisService.checkCode(codeDTO));
-    }
-
-    @Test
-    void test(){
-
     }
 }

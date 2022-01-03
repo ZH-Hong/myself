@@ -1,9 +1,11 @@
 package com.example.practice_pro.sbJedis.service.impl;
 
 import com.example.practice_pro.advice.exception.MyBusinessException;
+import com.example.practice_pro.sbJedis.dto.ProductDTO;
 import com.example.practice_pro.sbJedis.dto.SecKillUserDTO;
 import com.example.practice_pro.sbJedis.service.SecKillService;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
@@ -122,6 +124,25 @@ public class SecKillServiceImpl implements SecKillService {
         secKillUserDTO.setUserId(userId);
         secKillUserDTO.setProId(orderNumber);*/
         return secKillUserDTO;
+    }
+
+    /**
+    * 创建商品meth
+    *@Author 16967
+    *@Description 创建商品meth
+    *@Date 22:32 2022/1/2
+    *@Param
+     * @param productDTO
+    *@Return
+    **/
+    @Override
+    public String createProduct(ProductDTO productDTO) {
+        String checkExist = stringRedisTemplate.opsForValue().get(productDTO.getProductKey());
+        if(!StringUtils.isEmpty(checkExist)){
+            throw new MyBusinessException("已存在相应仓库商品，请检查商品key！");
+        }
+        stringRedisTemplate.opsForValue().set(productDTO.getProductKey(), productDTO.getProductQuantity());
+        return "添加商品成功！";
     }
 
     private String createOrderNumber(Long userId){
