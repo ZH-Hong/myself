@@ -92,10 +92,10 @@ public class SbJedisServiceImpl implements SbJedisService {
             for (int i = 0; i < 5; i++) {
                 checkLock = stringRedisTemplate.opsForValue().get(key);
                 if(StringUtils.isEmpty(checkLock)){
-                    stringRedisTemplate.opsForValue().setIfAbsent("lockKey", "locked", 20, TimeUnit.DAYS);
+                    stringRedisTemplate.opsForValue().setIfAbsent(key, "locked", 5 * 60, TimeUnit.SECONDS);
                     return "锁状态：解锁。并设置锁";
                 }
-                System.out.println("锁存在，尝试等待并进行重试...重试次数：" + i);
+                System.out.println("锁存在，尝试等待并进行重试...重试次数：" + (i + 1));
                 Thread.sleep(3000);
             }
         } catch (Exception e){

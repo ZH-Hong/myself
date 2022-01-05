@@ -16,6 +16,16 @@ spring:
         max-idle: 8   #最大闲置时间
         max-wait: -1ms  #最大等待时间
         min-idle: 0    #最小闲置时间
+    #集群配置
+#    cluster:
+#      nodes:
+#        - 127.0.0.1:6379 #替换为正确的redis集群的IP和端口号
+#        - 127.0.0.1:6380 #替换为正确的redis集群的IP和端口号
+#        - 127.0.0.1:6381 #替换为正确的redis集群的IP和端口号
+#        connectionTimeout: 6000
+#        soTimeout: 6000
+#        maxAttempts: 5
+#        password: 123456 #写正确的密码
 properties:
   code:
     num: 6

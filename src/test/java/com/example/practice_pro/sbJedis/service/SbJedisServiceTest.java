@@ -37,6 +37,6 @@ class SbJedisServiceTest {
     **/
     @Test
     void checkExclusiveLock(){
-        sbJedisService.checkExclusiveLock("testKey");
+        System.out.println("result:" + sbJedisService.checkExclusiveLock("testKey"));
     }
 }
