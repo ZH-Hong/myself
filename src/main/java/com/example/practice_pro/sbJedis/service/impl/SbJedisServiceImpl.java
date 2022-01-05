@@ -72,6 +72,39 @@ public class SbJedisServiceImpl implements SbJedisService {
     }
 
     /**
+     * 排它锁检验
+    *@author hongguo.zhu
+    *@Description 排它锁检验
+    *@Date 17:14 2022/1/5
+    *@Param
+     * @param key
+    *@Return
+     * @return java.lang.String
+    **/
+    @Override
+    public String checkExclusiveLock(String key) {
+        if(StringUtils.isEmpty(key)){
+            throw new MyBusinessException("key非法！");
+        }
+        String checkLock = null;
+        //尝试重试5次操作数据
+        try {
+            for (int i = 0; i < 5; i++) {
+                checkLock = stringRedisTemplate.opsForValue().get(key);
+                if(StringUtils.isEmpty(checkLock)){
+                    stringRedisTemplate.opsForValue().setIfAbsent("lockKey", "locked", 20, TimeUnit.DAYS);
+                    return "锁状态：解锁。并设置锁";
+                }
+                System.out.println("锁存在，尝试等待并进行重试...重试次数：" + i);
+                Thread.sleep(3000);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        throw new MyBusinessException("锁已存在，且超过最大重试次数，请等待后重试！");
+    }
+
+    /**
      * 随机生成n位验证码
     *@author hongguo.zhu
     *@Description 随机生成n位验证码

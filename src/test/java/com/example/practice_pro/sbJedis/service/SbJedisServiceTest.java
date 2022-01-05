@@ -26,4 +26,17 @@ class SbJedisServiceTest {
         codeDTO.setPhone(111111111111l);
         System.out.println(sbJedisService.checkCode(codeDTO));
     }
+
+    /**
+     * 排它锁检验
+    *@author hongguo.zhu
+    *@Description 排它锁检验
+    *@Date 17:36 2022/1/5
+    *@Param
+    *@Return
+    **/
+    @Test
+    void checkExclusiveLock(){
+        sbJedisService.checkExclusiveLock("testKey");
+    }
 }

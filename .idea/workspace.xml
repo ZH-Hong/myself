@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbc420d6-5c93-4b94-bb7d-7f49eb9060ca" name="Changes" comment="1. 增加Spring boot集成redis依赖；&#10;2. redis模拟验证码练习&#10;3. redis模拟购买商品练习，不含乐观锁">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/advice/exception/MyBusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/advice/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/advice/response/ApiResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/myself.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myself.iml" afterDir="false" />
+    <list default="true" id="dbc420d6-5c93-4b94-bb7d-7f49eb9060ca" name="Changes" comment="1. redis模拟购买商品练习，包含乐观锁&#10;2. 解决超卖、遗留问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/SecKillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/SecKillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/impl/SecKillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/impl/SecKillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/SbJedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/SbJedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/impl/SbJedisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/impl/SbJedisServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/practice_pro/sbJedis/service/SbJedisServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/practice_pro/sbJedis/service/SbJedisServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/practice_pro/sbJedis/service/SecKillServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/practice_pro/sbJedis/service/SecKillServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -65,7 +57,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReactorSettings">
@@ -89,11 +81,12 @@
       <recent name="com.example.practice_pro.sbJedis.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.practice_pro.jedis" />
       <recent name="com.example.practice_pro.advice.handler" />
       <recent name="com.example.practice_pro.advice" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SecKillServiceTest.secKill">
+  <component name="RunManager" selected="JUnit.SbJedisServiceTest.checkExclusiveLock">
     <configuration name="JedisTest.setTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myself" />
       <extension name="coverage">
@@ -126,6 +119,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SbJedisServiceTest.checkExclusiveLock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myself" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.practice_pro.sbJedis.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.practice_pro.sbJedis.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.sbJedis.service.SbJedisServiceTest" />
+      <option name="METHOD_NAME" value="checkExclusiveLock" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SbJedisServiceTest.redisCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myself" />
       <extension name="coverage">
@@ -137,22 +146,6 @@
       <option name="PACKAGE_NAME" value="com.example.practice_pro.sbJedis.service" />
       <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.sbJedis.service.SbJedisServiceTest" />
       <option name="METHOD_NAME" value="redisCode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecKillServiceTest.createProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myself" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.practice_pro.sbJedis.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.practice_pro.sbJedis.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.practice_pro.sbJedis.service.SecKillServiceTest" />
-      <option name="METHOD_NAME" value="createProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -183,8 +176,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SbJedisServiceTest.checkExclusiveLock" />
         <item itemvalue="JUnit.SecKillServiceTest.secKill" />
-        <item itemvalue="JUnit.SecKillServiceTest.createProduct" />
         <item itemvalue="JUnit.SbJedisServiceTest.checkCode" />
         <item itemvalue="JUnit.SbJedisServiceTest.redisCode" />
         <item itemvalue="JUnit.JedisTest.setTest" />
@@ -229,7 +222,9 @@
       <workItem from="1640827330186" duration="988000" />
       <workItem from="1640828376258" duration="2024000" />
       <workItem from="1640830512411" duration="15784000" />
-      <workItem from="1640913712050" duration="8223000" />
+      <workItem from="1640913712050" duration="10851000" />
+      <workItem from="1641102412184" duration="726000" />
+      <workItem from="1641347183587" duration="4957000" />
     </task>
     <task id="LOCAL-00001" summary="创建Mybatis Plus 项目&#10;1. 创建User相关entity、mapper、分页插件；&#10;2. 创建测试文件：查询所有、添加、逻辑删除、分页方法；">
       <created>1638110156970</created>
@@ -273,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640685082235</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1. 增加Spring boot集成redis依赖；&#10;2. redis模拟验证码练习&#10;3. redis模拟购买商品练习，不含乐观锁">
+      <created>1640936787019</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640936787019</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,13 +327,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/impl/SecKillServiceImpl.java</url>
-          <line>53</line>
+          <line>57</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/impl/SecKillServiceImpl.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/practice_pro/sbJedis/service/impl/SbJedisServiceImpl.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

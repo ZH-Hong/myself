@@ -34,4 +34,16 @@ public interface SbJedisService {
      * @return java.lang.String
     **/
     String checkCode(CodeDTO codeDTO);
+
+    /**
+     * 排它锁检验
+    *@author hongguo.zhu
+    *@Description 排它锁检验
+    *@Date 17:14 2022/1/5
+    *@Param
+     * @param key
+    *@Return
+     * @return java.lang.String
+    **/
+    String checkExclusiveLock(String key);
 }
