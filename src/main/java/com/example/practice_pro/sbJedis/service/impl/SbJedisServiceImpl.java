@@ -3,7 +3,6 @@ package com.example.practice_pro.sbJedis.service.impl;
 import com.example.practice_pro.advice.exception.MyBusinessException;
 import com.example.practice_pro.sbJedis.dto.CodeDTO;
 import com.example.practice_pro.sbJedis.service.SbJedisService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -11,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -140,19 +141,25 @@ public class SbJedisServiceImpl implements SbJedisService {
                     String value = String.valueOf(new Random().nextInt(10));
                     stringRedisTemplate.opsForValue().set(key, "value".concat(value));
                     log.info("key：{}，value：{}，UUID：{}，", key, value, localUUID);
-                    Long checkLockExpire = stringRedisTemplate.opsForValue().getOperations().getExpire(lockKey);
-                    if(!(checkLockExpire != -2l && StringUtils.equals(localUUID, stringRedisTemplate.opsForValue().get(lockKey)))){
-                        log.info("锁存在，尝试等待并进行重试...重试次数：{}", (i + 1));
-                        Thread.sleep(3000);
-                        continue;
+                    if(StringUtils.equals(stringRedisTemplate.opsForValue().get(lockKey), localUUID)){
+                        //在释放删除锁之前，引入lua脚本，保证原子性
+                        String script = "if redis.call('get', KEYS[1]) == ARGV[1] " +
+                                "then return redis.call('del', KEYS[1]) else return 0 end";
+                        DefaultRedisScript<Long> redisScript = new DefaultRedisScript<>();
+                        redisScript.setScriptText(script);
+                        //类型转换设置为Long，lua脚本返回的字符串0，转换为Long类型接收，正常会返回String类型，Long集合接收会报错
+                        redisScript.setResultType(Long.class);
+                        //参数：第一个lua脚本；第二个是需要判断的key；第三个是key对应的值;
+                        stringRedisTemplate.opsForValue().getOperations().execute(redisScript, Arrays.asList(lockKey), localUUID);
+                        log.info("{}在有效期，{}操作完毕，并解除锁", lockKey, key);
+                        return "锁状态：解锁。并设置锁";
                     }
-                    stringRedisTemplate.opsForValue().getOperations().delete(lockKey);
-                    log.info("{}在有效期，有效期时间：{}，{}操作完毕，并解除锁", lockKey, checkLockExpire, key);
-                    return "锁状态：解锁。并设置锁";
                 }
+                log.info("锁存在，尝试等待并进行重试...重试次数：{}", (i + 1));
+                Thread.sleep(3000);
             }
         } catch (Exception e){
-            e.printStackTrace();
+            throw new MyBusinessException(e.getMessage());
         }
         throw new MyBusinessException("当前有其他服务在操作数据，且超过最大重试次数，请等待后重试！");
     }
