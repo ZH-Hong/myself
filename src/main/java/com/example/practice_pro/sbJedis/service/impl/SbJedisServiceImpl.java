@@ -154,7 +154,7 @@ public class SbJedisServiceImpl implements SbJedisService {
         } catch (Exception e){
             e.printStackTrace();
         }
-        throw new MyBusinessException("锁已存在，且超过最大重试次数，请等待后重试！");
+        throw new MyBusinessException("当前有其他服务在操作数据，且超过最大重试次数，请等待后重试！");
     }
 
     /**
