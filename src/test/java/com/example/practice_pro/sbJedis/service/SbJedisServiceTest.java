@@ -39,4 +39,17 @@ class SbJedisServiceTest {
     void checkExclusiveLock(){
         System.out.println("result:" + sbJedisService.checkExclusiveLock("testKey"));
     }
+
+    /**
+     * 排它锁检验UUID
+     *@author hongguo.zhu
+     *@Description 排它锁检验 UUID
+     *@Date 17:36 2022/1/5
+     *@Param
+     *@Return
+     **/
+    @Test
+    void checkExclusiveLockByUUID(){
+        System.out.println("result:" + sbJedisService.checkExclusiveLockByUUID("testKey"));
+    }
 }

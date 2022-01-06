@@ -3,7 +3,9 @@ package com.example.practice_pro.sbJedis.service.impl;
 import com.example.practice_pro.advice.exception.MyBusinessException;
 import com.example.practice_pro.sbJedis.dto.CodeDTO;
 import com.example.practice_pro.sbJedis.service.SbJedisService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +14,7 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -22,6 +25,7 @@ import java.util.concurrent.TimeUnit;
  * @Date 2021/12/30 9:23
  * @Version 1.0
  */
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class SbJedisServiceImpl implements SbJedisService {
@@ -37,6 +41,9 @@ public class SbJedisServiceImpl implements SbJedisService {
 
     @Value("${spring.redis.password}")
     private String password;
+
+    @Value("${spring.redis.lock-key}")
+    private String lockKey;
 
     @Value("${properties.code.num}")
     private Integer num;
@@ -97,6 +104,52 @@ public class SbJedisServiceImpl implements SbJedisService {
                 }
                 System.out.println("锁存在，尝试等待并进行重试...重试次数：" + (i + 1));
                 Thread.sleep(3000);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        throw new MyBusinessException("锁已存在，且超过最大重试次数，请等待后重试！");
+    }
+
+    /**
+     * 排它锁检验，通过UUID
+     *@author hongguo.zhu
+     *@Description 排它锁检验，通过UUID
+     *@Date 17:14 2022/1/5
+     *@Param
+     * @param key
+     *@Return
+     * @return java.lang.String
+     **/
+    @Override
+    public String checkExclusiveLockByUUID(String key) {
+        log.info("进入UUID.....");
+        if(StringUtils.isEmpty(key)){
+            throw new MyBusinessException("key非法！");
+        }
+        String checkLock = null;
+        String localUUID = null;
+        //尝试重试5次操作数据
+        try {
+            for (int i = 0; i < 5; i++) {
+                checkLock = stringRedisTemplate.opsForValue().get(lockKey);
+                if(StringUtils.isEmpty(checkLock)){
+                    localUUID = UUID.randomUUID().toString();
+                    stringRedisTemplate.opsForValue().setIfAbsent(lockKey, localUUID, 5 * 60, TimeUnit.SECONDS);
+                    //加锁后进行操作
+                    String value = String.valueOf(new Random().nextInt(10));
+                    stringRedisTemplate.opsForValue().set(key, "value".concat(value));
+                    log.info("key：{}，value：{}，UUID：{}，", key, value, localUUID);
+                    Long checkLockExpire = stringRedisTemplate.opsForValue().getOperations().getExpire(lockKey);
+                    if(!(checkLockExpire != -2l && StringUtils.equals(localUUID, stringRedisTemplate.opsForValue().get(lockKey)))){
+                        log.info("锁存在，尝试等待并进行重试...重试次数：{}", (i + 1));
+                        Thread.sleep(3000);
+                        continue;
+                    }
+                    stringRedisTemplate.opsForValue().getOperations().delete(lockKey);
+                    log.info("{}在有效期，有效期时间：{}，{}操作完毕，并解除锁", lockKey, checkLockExpire, key);
+                    return "锁状态：解锁。并设置锁";
+                }
             }
         } catch (Exception e){
             e.printStackTrace();

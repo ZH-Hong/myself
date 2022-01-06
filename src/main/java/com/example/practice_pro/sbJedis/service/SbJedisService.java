@@ -46,4 +46,16 @@ public interface SbJedisService {
      * @return java.lang.String
     **/
     String checkExclusiveLock(String key);
+
+    /**
+     * 排它锁检验，通过UUID
+     *@author hongguo.zhu
+     *@Description 排它锁检验，通过UUID
+     *@Date 17:14 2022/1/5
+     *@Param
+     * @param key
+     *@Return
+     * @return java.lang.String
+     **/
+    String checkExclusiveLockByUUID(String key);
 }
